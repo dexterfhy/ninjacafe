@@ -47,7 +47,6 @@ Contains a single route to handle Telegram webhooks (updates).
 	- Dialogflow Client - `pip install google-cloud-dialogflow` <br>
 	- Basic Caching Library - `pip install Flask-Caching` <br>
     - Telegram Client - `pip install pyTelegramBotAPI`
-  - Create new `ninjacafe.py` file in base directory
 
 ---
 
