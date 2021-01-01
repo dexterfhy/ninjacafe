@@ -34,6 +34,7 @@ Contains a single route to handle Telegram webhooks (updates).
 - Install [PyCharm](https://www.jetbrains.com/pycharm/download)
 - Install [python3](https://www.python.org/) and [pip](https://pip.pypa.io/en/stable/installing/)
 - Install [ngrok](https://ngrok.com/download) to tunnel requests to your local machine
+- Install [Postman](https://www.postman.com/downloads/) to make API requests e.g. setting Telegram webhooks
 
 #### Setup
 - Create new project with PyCharm
