@@ -10,12 +10,6 @@ def default_if_blank(s, default):
         return default
 
 
-# Executes a given lambda if all string params are not None or blank
-def call_if_all_inputs_not_blank(*string, func):
-    if is_not_blank(string):
-        return func()
-
-
 # Extracts user id from Telegram request
 def get_user_from_request(req_body):
     if 'callback_query' in req_body:
@@ -40,7 +34,7 @@ def __get_req_from_name(req_from):
         return ''
 
 
-# Extract's user's input (text or button click) from Telegram request
+# Extracts user's input (text or button click) from Telegram request
 def get_user_input_from_request(req_body):
     if 'callback_query' in req_body:
         return req_body.get('callback_query', {}).get('data', '')
@@ -50,6 +44,16 @@ def get_user_input_from_request(req_body):
         return ''
 
 
+# Extracts user's commands from Telegram request
+def get_user_command_from_request(req_body):
+    if 'message' in req_body and 'entities' in req_body['message']:
+        text = req_body.get('message').get('text')
+        return set(map(lambda entity: text[entity['offset'] + 1: entity['offset'] + entity['length']],
+                   req_body['message']['entities']))
+    else:
+        return {}
+
+
 # Checks where one or more string params provided are None or blank
 def is_not_blank(*string):
     return all(s is not None and s for s in string)
@@ -57,23 +61,13 @@ def is_not_blank(*string):
 
 # Extracts list of Item objects from intent result that were captured from response
 def get_items_from_response(intent_result):
-    return __get_numbered_entries_from_response(intent_result.output_contexts[0])\
-       + __get_regular_entries_from_response(intent_result.output_contexts[0])
-
-
-def __get_numbered_entries_from_response(context):
     entries = []
 
-    for captured_item in context.parameters['cafe-order-entry']:
-        entries.append(Item(captured_item['menu-item'], int(captured_item['item-number'])))
-
-    return entries
-
-
-def __get_regular_entries_from_response(context):
-    entries = []
-
-    for captured_item in context.parameters['cafe-menu-item']:
-        entries.append(Item(captured_item, 1))
+    # Assumes at least one context is active
+    for captured_item in intent_result.output_contexts[0].parameters['cafe-order-entry']:
+        if captured_item.__contains__('item-number'):
+            entries.append(Item(captured_item['menu-item'], int(captured_item['item-number'])))
+        else:
+            entries.append(Item(captured_item['menu-item'], 1))
 
     return entries

@@ -1,22 +1,23 @@
 import uuid
 
 from beans.item import Item
+from beans.session import Session
 from beans.user import User
 from main import cache
 from utils import default_if_blank, is_not_blank
 
 
 # Returns a session id for the current user, or generates a new one (UUID)
-def get_current_session_id(user: User):
+def get_current_session(user: User):
     session_key = __session_key(user)
     session_id = cache.get(session_key)
 
     if is_not_blank(session_id):
-        return session_id
+        return Session(session_id, False)
     else:
         new_session_id = uuid.uuid4().hex
         cache.set(session_key, new_session_id)
-        return new_session_id
+        return Session(new_session_id, True)
 
 
 # Returns the Dictionary of orders (and their counts) for the user in the current session, or an empty Dict if none

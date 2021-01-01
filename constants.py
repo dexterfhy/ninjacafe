@@ -10,6 +10,7 @@ MENU_CODES_TO_OPTIONS = {
     "MENU_ITEM_STEAK": "Minute Steak Frites",
     "MENU_ITEM_SALAD": "Caesar Salad"
 }
+DEFAULT_GREETING = 'Welcome to Ninja Cafe :) To get started, just say \'hi\' or let me know what you need!'
 DEFAULT_ERROR_MESSAGE = 'Sorry, something went wrong. Please try again later!'
 MAIN_SUGGESTIONS = (
     "I want to order something",

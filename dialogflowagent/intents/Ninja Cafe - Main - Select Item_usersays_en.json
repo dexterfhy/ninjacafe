@@ -162,8 +162,8 @@
       },
       {
         "text": "BLT",
-        "meta": "@CafeMenuItem",
-        "alias": "cafe-menu-item",
+        "meta": "@CafeOrderEntry",
+        "alias": "cafe-order-entry",
         "userDefined": true
       },
       {
@@ -172,8 +172,8 @@
       },
       {
         "text": "blueberry donut",
-        "meta": "@CafeMenuItem",
-        "alias": "cafe-menu-item",
+        "meta": "@CafeOrderEntry",
+        "alias": "cafe-order-entry",
         "userDefined": true
       }
     ],
@@ -191,8 +191,8 @@
       },
       {
         "text": "mac \u0026 cheese",
-        "meta": "@CafeMenuItem",
-        "alias": "cafe-menu-item",
+        "meta": "@CafeOrderEntry",
+        "alias": "cafe-order-entry",
         "userDefined": true
       },
       {
@@ -201,8 +201,8 @@
       },
       {
         "text": "spaghetti",
-        "meta": "@CafeMenuItem",
-        "alias": "cafe-menu-item",
+        "meta": "@CafeOrderEntry",
+        "alias": "cafe-order-entry",
         "userDefined": true
       },
       {
@@ -211,8 +211,8 @@
       },
       {
         "text": "caesar salad",
-        "meta": "@CafeMenuItem",
-        "alias": "cafe-menu-item",
+        "meta": "@CafeOrderEntry",
+        "alias": "cafe-order-entry",
         "userDefined": true
       },
       {
@@ -291,8 +291,8 @@
       },
       {
         "text": "BLT bacon sandwich",
-        "meta": "@CafeMenuItem",
-        "alias": "cafe-menu-item",
+        "meta": "@CafeOrderEntry",
+        "alias": "cafe-order-entry",
         "userDefined": true
       }
     ],
@@ -310,8 +310,8 @@
       },
       {
         "text": "aglio olio",
-        "meta": "@CafeMenuItem",
-        "alias": "cafe-menu-item",
+        "meta": "@CafeOrderEntry",
+        "alias": "cafe-order-entry",
         "userDefined": true
       }
     ],
@@ -329,8 +329,8 @@
       },
       {
         "text": "teriyaki chicken burger",
-        "meta": "@CafeMenuItem",
-        "alias": "cafe-menu-item",
+        "meta": "@CafeOrderEntry",
+        "alias": "cafe-order-entry",
         "userDefined": true
       }
     ],
@@ -348,8 +348,8 @@
       },
       {
         "text": "almond crunch cookie",
-        "meta": "@CafeMenuItem",
-        "alias": "cafe-menu-item",
+        "meta": "@CafeOrderEntry",
+        "alias": "cafe-order-entry",
         "userDefined": true
       },
       {
@@ -371,8 +371,8 @@
       },
       {
         "text": "blueberry donut",
-        "meta": "@CafeMenuItem",
-        "alias": "cafe-menu-item",
+        "meta": "@CafeOrderEntry",
+        "alias": "cafe-order-entry",
         "userDefined": true
       },
       {
@@ -394,8 +394,8 @@
       },
       {
         "text": "loaf of sourdough",
-        "meta": "@CafeMenuItem",
-        "alias": "cafe-menu-item",
+        "meta": "@CafeOrderEntry",
+        "alias": "cafe-order-entry",
         "userDefined": true
       }
     ],

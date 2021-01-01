@@ -8,17 +8,17 @@ bot = telebot.TeleBot(TELEGRAM_API_TOKEN)
 
 
 # Send a message to Telegram chat without options
-def send_message(user: User, intent_result, session_id, response):
+def send_message(user: User, state, session_id, response):
     print("Sending response '{}' for user {} session {} intent '{}'"
-          .format(response, user.id, session_id, intent_result.intent.display_name))
+          .format(response, user.id, session_id, state))
 
     return bot.send_message(user.id, response)
 
 
 # Send a message to Telegram chat with options, with two options in a row by default
-def send_message_with_options(user: User, intent_result, session_id, response, *options, row_width=2):
+def send_message_with_options(user: User, state, session_id, response, *options, row_width=2):
     print("Sending response '{}' with options '{}' for user {} session {} intent '{}'"
-          .format(response, options, user.id, session_id, intent_result.intent.display_name))
+          .format(response, options, user.id, session_id, state))
 
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, row_width=row_width)
     markup.add(*options)

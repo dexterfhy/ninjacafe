@@ -4,6 +4,6 @@
   "isOverridable": true,
   "isEnum": false,
   "isRegexp": false,
-  "automatedExpansion": false,
+  "automatedExpansion": true,
   "allowFuzzyExtraction": true
 }

@@ -35,7 +35,7 @@
   "fallbackIntent": false,
   "events": [
     {
-      "name": "NINJA_CAFE_RESET_TO_MAIN_EVENT"
+      "name": "NINJA_CAFE_MAIN_EVENT"
     }
   ],
   "conditionalResponses": [],
