@@ -44,7 +44,7 @@ Contains a single route to handle Telegram webhooks (updates).
    `https://flask.palletsprojects.com/en/1.1.x/installation/#`
   - Install required dependencies <br>
 	- Flask - `pip install Flask` <br>
-	- Google Authentication - `pip install google.oauth2` <br>
+	- Google Authentication - `pip install google.oauth` <br>
 	- Dialogflow Client - `pip install google-cloud-dialogflow` <br>
 	- Basic Caching Library - `pip install Flask-Caching` <br>
     - Telegram Client - `pip install pyTelegramBotAPI`
