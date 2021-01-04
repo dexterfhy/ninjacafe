@@ -20,7 +20,7 @@ def get_current_session(user: User):
         return Session(new_session_id, True)
 
 
-# Returns the Dictionary of orders (and their counts) for the user in the current session, or an empty Dict if none
+# Returns the Dictionary of items (and their counts) for the user in the current session order, or an empty Dict if none
 def get_current_order(user: User, session_id):
     orders_key = __current_orders_key(user, session_id)
     orders = cache.get(orders_key)

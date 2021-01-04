@@ -49,7 +49,7 @@ def get_user_command_from_request(req_body):
     if 'message' in req_body and 'entities' in req_body['message']:
         text = req_body.get('message').get('text')
         return set(map(lambda entity: text[entity['offset'] + 1: entity['offset'] + entity['length']],
-                   req_body['message']['entities']))
+                       filter(lambda entity: entity['type'] == 'bot_command', req_body['message']['entities'])))
     else:
         return {}
 
