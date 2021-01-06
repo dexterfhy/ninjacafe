@@ -14,7 +14,12 @@ def list_orders(user: User):
 
 # Calls an API to create a new order (with one or many menu items) for a user given his Telegram user id
 def create_order(user: User, order_items):
-    return __send_request('POST', get_orders_url(user), order_items)
+    return __send_request('POST', get_orders_url(user),
+                          json.dumps({
+                              "items": [
+                                  {'code': name, 'count': count} for name, count in order_items.items()
+                              ]
+                          }))
 
 
 # Parses the response from list orders endpoint into a list of order descriptions and timestamps
@@ -33,7 +38,8 @@ def get_orders_url(user: User):
 
 def __send_request(method, url, body):
     headers = {
-        "Connection": "keep-alive"
+        "Connection": "keep-alive",
+        "Content-Type": "application/json"
     }
 
     response = request(method, headers=headers, url=url, data=body)
